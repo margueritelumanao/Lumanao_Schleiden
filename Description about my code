@@ -1,0 +1,21 @@
+import turtle as tur        (this allows to control the turtle graphics)
+import colorsys as cs           (to work with color manipulation space)
+
+tur.setup(800, 800)       (screen size)
+tur.speed(0)              (the speed of the turtle graphics)
+tur.tracer(0)     # Disable auto screen updates   (disables auto screen updates, so it controls manually for smooth animation or graphics)
+tur.width(2)          (width of the turtle pen)
+tur.bgcolor("black")  (background color)
+
+while True:   # Infinite loop   (it makes the code in infinite loops and it will stop manually)
+    for j in range(25):          (outer loop)
+        for i in range(25):      (inner loop)
+            tur.color(cs.hsc_to_rgb(i / 15, j /25, 1))  # Corrected color method   (calculates a color value based on 'j' and 'i')
+            tur.right(90)     (rotates turtle 90 degrees counterclockwise)
+            tur.circle(200 - j * 4, 90)  
+            tur.left(90)     (rotates turtle to 90 degrees clockwise)
+            tur.circle(200 - j * 4, 90)
+            tur.circle(180)   (draws a full cicle with radius)
+            tur.circle(50, 24)
+
+tur.updates() # Manually update the screen after each iteration (screen updates are turned off by default)
